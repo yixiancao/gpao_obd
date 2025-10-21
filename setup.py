@@ -14,6 +14,9 @@ setup(
     long_description_content_type="text/markdown",
     packages=find_packages(exclude=("tests", "notebooks")),
     include_package_data=True,
+    package_data={
+        "gpao_obd": ["template.obd"],
+    },
     install_requires=[
         "astropy",
         "numpy",
