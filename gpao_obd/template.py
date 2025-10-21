@@ -1,5 +1,5 @@
 import re
-
+from pathlib import Path
 
 def generate(replace):
     """
@@ -18,7 +18,9 @@ def generate(replace):
     """
 
     # Read template.obd
-    with open('template.obd', 'r') as f:
+    template_path = Path(__file__).parent / 'template.obd'
+
+    with open(template_path, 'r') as f:
         ob = f.read()
 
     # Perform all replacements of <entries>

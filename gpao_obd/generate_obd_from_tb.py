@@ -1,7 +1,8 @@
 from turtle import mode
-import template
+from . import template
 from astropy.units import degree, arcmin, arcsec
 from astropy.coordinates import SkyCoord
+from pathlib import Path
 
 def generate_lgs_vis_template(target, usename = False):
     tel = SkyCoord(target['ra']*degree, target['dec']*degree)
@@ -41,5 +42,6 @@ def generate_lgs_vis_template(target, usename = False):
     }
 
     template.generate(replace)
+
     print (f"template generated at {replace['OBNAME']}.obd")
-    return
+    return f"{replace['OBNAME']}.obd"

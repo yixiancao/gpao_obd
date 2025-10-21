@@ -1,0 +1,83 @@
+#
+# OBD-file written by BOB
+# It includes the description of one observation block
+#
+
+# Standard parameter file header
+PAF.HDR.START           ;                      # Marks start of header
+PAF.TYPE                "OB Description";      # Type of parfile
+PAF.ID                  "";                    # Unused
+PAF.NAME                "";                    # Unused
+PAF.DESC                "";                    # Unused
+PAF.CRTE.NAME           "BOB";                 # Broker for OBs
+PAF.CRTE.DAYTIM         "2025-01-13T04:15:29"; # Date+time of creation
+PAF.LCHG.NAME           "";                    # Unused
+PAF.LCHG.DAYTIM         "2025-01-13T04:15:29"; # Date+time of last change
+PAF.CHCK.NAME           "";                    # Unused
+PAF.CHCK.DAYTIM         "";                    # Unused
+PAF.CHCK.CHECKSUM       "";                    # Unused
+PAF.HDR.END             ;                      # Marks end of header
+
+# Observation Block description follows
+# OB edited by BOB
+OBS.ID                         "-1"
+OBS.DID                        "ESO-VLT-DIC.OBS-2.2"
+OBS.GRP                        "0"
+OBS.NAME                       "LGS_VIS_[MDM2001]_CFHT-BD-Tau_19"
+OBS.PI-COI.ID                  "0"
+OBS.PI-COI.NAME                "GRAVITYTeam"
+OBS.PROG.ID                    "60.A-9102(J)"
+
+# TPL edited by BOB
+TPL.ID                         "GPAO_gen_tec_preset"
+TPL.NAME                       "PRESET the GPAO system"
+TPL.NEXP                       "1"
+TPL.MODE                       ""
+
+TEL.TARG.TYPE                  "COORDINATE"
+TEL.TARG.NAME                  "[MDM2001] CFHT-BD-Tau 19"
+TEL.TARG.ALPHA                 "042107.971"
+TEL.TARG.DELTA                 "+270220.084"
+TEL.TARG.PARALLAX              "0.000000"
+TEL.TARG.PMA                   "0.000000"
+TEL.TARG.PMD                   "0.000000"
+TEL.TARG.RADVEL                "0"
+TEL.TARG.EPOCH                 "2000.0"
+TEL.TARG.MAG.K                 "10.5"
+TEL.TARG.WLENGTH               "2200.0"
+
+COU.AO.TYPE                    "LGS_VIS"
+
+COU.NGS.NAME                   "[MDM2001] CFHT-BD-Tau 19"
+COU.NGS.SOURCE                 "SCIENCE"
+COU.NGS.ALPHA                  "0"
+COU.NGS.DELTA                  "0"
+COU.NGS.PARALLAX               "0"
+COU.NGS.PMA                    "0"
+COU.NGS.PMD                    "0"
+COU.NGS.RADVEL                 "0"
+COU.NGS.EPOCH                  "2000.0"
+COU.NGS.MAG                    "16.9"
+COU.NGS.WLENGTH                "800.0"
+
+COU.LGS.SOURCE                 "SCIENCE"
+COU.LGS.ALPHA                  "0"
+COU.LGS.DELTA                  "0"
+COU.LGS.PARALLAX               "0"
+COU.LGS.PMA                    "0"
+COU.LGS.PMD                    "0"
+COU.LGS.RADVEL                 "0"
+COU.LGS.EPOCH                  "2000"
+
+ISS.STS.OFFSETANGLE            "0"
+ISS.STS.OFFSETDIST             "10.0"
+
+SEQ.ACQ.AUTOMATIC              "T"
+SEQ.PRESET.AO                  "T"
+SEQ.PRESET.STS                 "T"
+SEQ.PRESET.TEL                 "T"
+
+TEL.CHOP.FREQ                  "1"
+TEL.CHOP.POSANG                "0"
+TEL.CHOP.PVRATIO               "1"
+TEL.CHOP.THROW                 "0"
