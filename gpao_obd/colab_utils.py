@@ -36,6 +36,7 @@ def load_gspread_url(sheet_url, sheet_name=None, header_row=0, skip_rows=0):
     tb : astropy.table.Table
         The table loaded from the Google Sheet.
     '''
+    
     if gc is None:
         raise ImportError('Not in Google Colab!')
 
