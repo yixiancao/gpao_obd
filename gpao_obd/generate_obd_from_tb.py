@@ -4,6 +4,9 @@ from astropy.units import degree, arcmin, arcsec
 from astropy.coordinates import SkyCoord
 from pathlib import Path
 
+sanitize_name = lambda s: f"{s}".replace(' ', '_')
+
+
 def generate_lgs_vis_template(target, usename = False):
     tel = SkyCoord(target['ra']*degree, target['dec']*degree)
 
@@ -15,12 +18,12 @@ def generate_lgs_vis_template(target, usename = False):
     sts_offset = "10.0"
 
     if usename:
-        obname = f"{mode}_{target['name']}".replace(' ', '_')
+        obname = sanitize_name(f"{mode}_{target['name']}")
     else:
-        obname = f"{mode}_{tel_alpha.split('.')[0]}{tel_delta.split('.')[0]}_{target['Grp']:4.1f}_{target['K']:4.1f}".replace(' ', '_')
+        obname = sanitize_name(f"{mode}_{tel_alpha.split('.')[0]}{tel_delta.split('.')[0]}_{target['Grp']:4.1f}_{target['K']:4.1f}")
 
     replace = {'OBNAME'         : obname,
-            'TEL.TARG.NAME'     : f"{target['name']}",
+            'TEL.TARG.NAME'     : sanitize_name(target['name']),
             'TEL.TARG.ALPHA'    : tel_alpha,
             'TEL.TARG.DELTA'    : tel_delta,
             'TEL.TARG.PARALLAX' : f"{target['parallax']/1e3:.6f}",
@@ -29,7 +32,7 @@ def generate_lgs_vis_template(target, usename = False):
             'TEL.TARG.MAG.K'    : f"{target['K']:.1f}",
             'COU.AO.TYPE'       : mode,
             'COU.NGS.SOURCE'    : ngs_source,
-            'COU.NGS.NAME'      : f"{target['name']}",
+            'COU.NGS.NAME'      : sanitize_name(target['name']),
             'COU.NGS.ALPHA'     : "0",
             'COU.NGS.DELTA'     : "0",
             'COU.NGS.PARALLAX'  : "0",
